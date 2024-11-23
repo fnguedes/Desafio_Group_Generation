@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Modal, Alert } from "react-native";
 import React, { useState } from "react";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import Entypo from "@expo/vector-icons/Entypo";
 
 export interface PropsModal {
 	setModalVisible: (visible: boolean) => void;
@@ -13,7 +13,7 @@ export function Button({ setModalVisible, modalVisible }: PropsModal) {
 			onPress={() => setModalVisible(!modalVisible)}
 			activeOpacity={0.2}
 		>
-			<FontAwesome5 name="search" size={28} color="white" />
+			<Entypo name="plus" size={36} color="white" />
 		</TouchableOpacity>
 	);
 }

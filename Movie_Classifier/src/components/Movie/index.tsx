@@ -1,7 +1,8 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
-import { takeMovie } from "../../hooks/takeMovie";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import KnowMore from "../ModalKnowMore";
+import { NoteOrDelete } from "../ModalNoteOrDelete";
 
 interface Data {
 	first: string;
@@ -38,12 +39,18 @@ export interface objectMovie {
 
 export interface Props {
 	movie: objectMovie;
+	movies: objectMovie[];
+	setMovies: (movies: objectMovie[]) => void;
 }
-export const Movie = ({ movie }: Props) => {
+export const Movie = ({ movie, movies, setMovies }: Props) => {
+	const [knowMore, setKnowMore] = useState<boolean>(false);
+	const [noteOrDelete, setNoteOrDelete] = useState<boolean>(false);
+
 	return (
 		<TouchableOpacity
 			className="flex-row h-[300] w-full border-b-2 border-[#D9D9D9] px-[20] items-center"
 			activeOpacity={0.7}
+			onPress={() => setNoteOrDelete(true)}
 		>
 			<Image
 				source={{
@@ -60,27 +67,39 @@ export const Movie = ({ movie }: Props) => {
 					<View className="flex-row justify-center items-center">
 						<AntDesign name="star" size={24} color="#DAA520" />
 						<Text className="color-[#DAA520]">
-							{movie.Ratings[0].Value.substring(0, 3)}
+							{movie.imdbRating !== "N/A" ? movie.imdbRating : null}
 						</Text>
 					</View>
 				</View>
 
-				<Text className="color-white text-sm mt-4 font-light ">
-					{movie.Plot.slice(0, 145)}
+				<Text className="color-white text-sm mt-2 font-light ">
+					{movie.Plot !== "N/A" ? movie.Plot.slice(0, 145) : "Sem sinopse"}
 				</Text>
 
 				<View className="w-[95%] h-28 ">
 					<Data first="Diretor: " second={movie.Director} />
-					<Data first="Ano de lançamento: " second={movie.Year} />
+					<Data first="Ano de lançamento: " second={movie.Year.slice(0, 4)} />
 					<Data first="Gênero: " second={movie.Genre} />
 				</View>
 
 				<View className="w-[90%] h-[15%] justify-end items-center absolute bottom-16">
-					<TouchableOpacity className="">
+					<TouchableOpacity className="" onPress={() => setKnowMore(true)}>
 						<Text className="color-[#f00] underline text-lg">Saiba mais</Text>
 					</TouchableOpacity>
 				</View>
 			</View>
+			<KnowMore
+				setModalVisible={setKnowMore}
+				modalVisible={knowMore}
+				movie={movie}
+			/>
+			<NoteOrDelete
+				setModalVisible={setNoteOrDelete}
+				modalVisible={noteOrDelete}
+				movie={movie}
+				movies={movies}
+				setMovies={setMovies}
+			/>
 		</TouchableOpacity>
 	);
 };
@@ -89,7 +108,9 @@ function Data({ first, second }: Data) {
 	return (
 		<View className="flex-row items-center mt-3">
 			<Text className="font-bold color-white">{first}</Text>
-			<Text className="font-light color-white text-sm max-w-48">{second}</Text>
+			<Text className="font-light color-white text-sm max-w-48">
+				{second !== "N/A" ? second : "Desconhecido"}
+			</Text>
 		</View>
 	);
 }
