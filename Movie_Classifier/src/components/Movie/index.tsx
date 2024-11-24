@@ -59,8 +59,11 @@ export const Movie = ({ movie, movies, setMovies }: Props) => {
 				className="h-64 w-44 "
 			/>
 			<View className="ml-3 w-[58%] h-full mt-16">
-				<View className="py-1 items-center flex-row justify-center ">
-					<Text className="color-white text-center text-lg font-bold w-[75%]">
+				<View className="py-1 items-center flex-row justify-center">
+					<Text
+						className="color-white text-center text-lg font-bold w-[75%]"
+						numberOfLines={2}
+					>
 						{movie.Title.slice(0, 30)}
 					</Text>
 
@@ -72,8 +75,11 @@ export const Movie = ({ movie, movies, setMovies }: Props) => {
 					</View>
 				</View>
 
-				<Text className="color-white text-sm mt-2 font-light ">
-					{movie.Plot !== "N/A" ? movie.Plot.slice(0, 145) : "Sem sinopse"}
+				<Text
+					className="color-white text-sm mt-2 font-light "
+					numberOfLines={4}
+				>
+					{movie.Plot !== "N/A" ? movie.Plot : "Sem sinopse"}
 				</Text>
 
 				<View className="w-[95%] h-28 ">
@@ -106,7 +112,7 @@ export const Movie = ({ movie, movies, setMovies }: Props) => {
 
 function Data({ first, second }: Data) {
 	return (
-		<View className="flex-row items-center mt-3">
+		<View className="flex-row items-center mt-2">
 			<Text className="font-bold color-white">{first}</Text>
 			<Text className="font-light color-white text-sm max-w-48">
 				{second !== "N/A" ? second : "Desconhecido"}

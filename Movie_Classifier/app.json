@@ -1,29 +1,35 @@
 {
-	"expo": {
-		"name": "Movie_Classifier",
-		"slug": "Movie_Classifier",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "./assets/icon.png",
-		"userInterfaceStyle": "light",
-		"newArchEnabled": true,
-		"splash": {
-			"image": "./assets/splash-icon.png",
-			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
-		},
-		"ios": {
-			"supportsTablet": true
-		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/adaptive-icon.png",
-				"backgroundColor": "#ffffff"
-			}
-		},
-		"web": {
-			"favicon": "./assets/favicon.png",
-			"bundler": "metro"
-		}
-	}
+  "expo": {
+    "name": "Movie Finder",
+    "slug": "Movie_Classifier",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/splash.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#6CBCE1"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/splash.png",
+        "backgroundColor": "#6CBCE1"
+      },
+      "package": "com.solaris_vulpes.Movie_Classifier"
+    },
+    "web": {
+      "favicon": "./assets/splash.png",
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "05e8d614-e444-4184-9359-a339a5a2fc19"
+      }
+    }
+  }
 }
