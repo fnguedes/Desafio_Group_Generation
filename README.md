@@ -5,3 +5,4 @@
 - React Native com typescript
 - Asyncstorage
 - [Figma](https://www.figma.com/design/ZZhjhgAJqwd6zUiLwL0AkA/Desafio?node-id=0-1&t=A9a3qPrutO4fNEOz-1)
+- Nativewind
