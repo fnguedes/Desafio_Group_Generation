@@ -96,4 +96,4 @@ git push origin feature/nome-da-feature
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 ## ✨ Contato
-Criado por Fellipe Guedes. Entre em contato para dúvidas ou sugestões!
+Criado por [Fellipe Guedes](https://www.linkedin.com/in/fellipe-nascimento-guedes-/). Entre em contato para dúvidas ou sugestões!
