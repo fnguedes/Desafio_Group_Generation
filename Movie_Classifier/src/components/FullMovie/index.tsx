@@ -41,7 +41,7 @@ interface Props {
 }
 export const FullMovie = ({ movie }: Props) => {
 	return (
-		<View className="w-[100%] h-full py-8 px-4 ">
+		<View className="w-[100%] h-full pb-20 pt-8 px-4 ">
 			<View className=" py-1 items-center flex-row justify-center ">
 				<Text className="color-white text-center text-2xl font-bold w-[75%]">
 					{movie.Title}
@@ -64,7 +64,7 @@ export const FullMovie = ({ movie }: Props) => {
 				/>
 				<View className="w-[100%] ">
 					<Text className="color-white text-sm font-light ">
-						{movie.Plot !== "N/A" ? movie.Plot.slice(0, 300) : null}
+						{movie.Plot !== "N/A" ? movie.Plot : null}
 					</Text>
 				</View>
 			</View>

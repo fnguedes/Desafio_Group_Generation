@@ -5,5 +5,6 @@ export const takeMovie = async (movie: string) => {
 	if (response.Error) {
 		return false;
 	}
+	console.log(response);
 	return response;
 };

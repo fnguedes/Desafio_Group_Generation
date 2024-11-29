@@ -77,7 +77,7 @@ export const Movie = ({ movie, movies, setMovies }: Props) => {
 
 				<Text
 					className="color-white text-sm mt-2 font-light "
-					numberOfLines={4}
+					numberOfLines={3}
 				>
 					{movie.Plot !== "N/A" ? movie.Plot : "Sem sinopse"}
 				</Text>
